@@ -6,12 +6,24 @@ let props: Object = {};
 
 export function initializeUi() {
     // Creation de l'objet selon le type de companion choisit par l'utilisateur
-    const companionNameChoosed: HTMLInputElement = document.getElementById('companion-name') as HTMLInputElement;
-    const companionType: HTMLSelectElement = document.getElementById('companion-type') as HTMLSelectElement;
+    const companionNameChoosed: HTMLInputElement = document.getElementById('userName') as HTMLInputElement;
+    const dog = document.querySelector('.dog');
+    const cat = document.querySelector('.cat');
+    let companionType: string = '';
+
+    dog?.addEventListener("click", (event) => {
+        console.log("chien")
+        companionType = "chien"
+    })
+    cat?.addEventListener("click", (event) => {
+        console.log("chat")
+        companionType = "chat";
+    })
+
     let companionNameDisplayed: HTMLElement = document.getElementById('companion-name-display') as HTMLElement;
     const createDog: Object = new Dog(companionNameChoosed.value, 100, 100, 100);
     const createCat: Object = new Cat(companionNameChoosed.value, 100, 100, 100);
-    myCompanion = companionType.value === "dog" ? createDog : createCat;
+    myCompanion = companionType === "dog" ? createDog : createCat;
     companionNameDisplayed.innerHTML = companionNameChoosed.value
 
     //Implementation des jauges en fonction du type de companion choisit par l'utilisateur

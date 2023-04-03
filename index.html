@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -10,46 +10,55 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Choisissez votre compagnon</h1>
-        <div class="companion-images">
-            <img src="/assets/human1.png" alt="Chien" id="dog-image" class="companion-image hidden" />
-            <img src="/assets/human2.png" alt="Chat" id="cat-image" class="companion-image hidden" />
-        </div>
+    <div class="HomeContainer" id="home">
+        <div class="loginBox">
+            <input type="text" id="userName" name="username" class="userName" placeholder="Choisir un nom" required>
+            <h2 class="chooseCompanionName">Choisir votre compagnon</h2>
+            <div class="chooseCompanion">
 
-        <form id="companion-form">
-            <label for="companion-name">Nom:</label>
-            <input type="text" id="companion-name" name="companion-name" required />
-            <label for="companion-type">Type de compagnon:</label>
-            <select id="companion-type" name="companion-type" required>
-                <option value="dog">Chien</option>
-                <option value="cat">Chat</option>
-            </select>
-            <button id="startButton" type="submit">Commencer</button>
-        </form>
+                <div class="dog">
+
+                </div>
+                <div class="cat">
+
+                </div>
+            </div>
+            <button type="button" class="startButton" id="startButton" mdbBtn mdbWavesEffect>COMMENCER</button>
+        </div>
     </div>
 
-    <div class="game">
+    <div class="game" id="game">
         <h2 id="companion-name-display"></h2>
+
+        <div class="tamagotchi">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+                <circle id="need1Button" cx="36.75" cy="81.25" r="4" stroke="black" fill="transparent"
+                    style="cursor: pointer;" />
+                <circle id="need2Button" cx="50.17" cy="86.25" r="4" stroke="black" fill="transparent"
+                    style="cursor: pointer;" />
+                <circle id="need3Button" cx="63.80" cy="81.35" r="4" stroke="black" fill="transparent"
+                    style="cursor: pointer;" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="gameInterface">
         <div class="needs">
             <div class="need">
                 <label for="need1"></label>
                 <progress id="need1" max="100" value="0"></progress>
-                <button id="need1Button">Augmenter</button>
             </div>
             <div class="need">
                 <label for="need2"></label>
                 <progress id="need2" max="100" value="0"></progress>
-                <button id="need2Button">Augmenter</button>
             </div>
             <div class="need">
                 <label for="need3"></label>
                 <progress id="need3" max="100" value="0"></progress>
-                <button id="need3Button">Augmenter</button>
             </div>
         </div>
     </div>
-
+    </div>
 
     <script type="module" src="/index.ts"></script>
 </body>

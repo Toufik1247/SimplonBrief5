@@ -22,7 +22,7 @@ export function decreaseNeeds() {
             newNeedValue = propValue * 0.94;
         } else {
             // Baisse de 2% si la jauge à moins de 15%
-            newNeedValue = propValue * 0.98;
+            newNeedValue = propValue * 0.96;
         }
         // Actualiser la valeur de la propriété ainsi que la jauge
         myCompanion[propName] = newNeedValue;

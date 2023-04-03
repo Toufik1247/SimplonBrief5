@@ -10,6 +10,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
     "sass": "^1.60.0",
     "typescript": "^5.0.2"
   },
