@@ -2,6 +2,7 @@ import { initializeUi } from "./components/initializeUi";
 import { decreaseNeeds } from "./components/decreaseNeeds";
 import { increaseNeeds } from "./components/increaseNeeds";
 import { showGame } from "./components/showGame";
+import { Terminal_Input} from "./components/term"
 
 
 const dog = document.querySelector('.dog');
@@ -32,6 +33,7 @@ function startGame() {
         obj.preventTextSelection(obj.btnNeed1);
         obj.preventTextSelection(obj.btnNeed2);
         obj.preventTextSelection(obj.btnNeed3)
+        window.addEventListener('keydown', Terminal_Input);
     })
 
 }

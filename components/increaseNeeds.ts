@@ -1,4 +1,7 @@
 import { myCompanion, props } from "./initializeUi";
+
+import { Dog } from "./dogClass";
+
 export function increaseNeeds() {
     // Récupération des boutons pour chacun des besoins
     const btnNeed1 = document.getElementById('need1Button') as HTMLElement

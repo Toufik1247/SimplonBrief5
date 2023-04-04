@@ -5,6 +5,7 @@ export function showGame() {
     
     if (gameUi && homeUi) {
         homeUi.style.visibility = "hidden";
+        gameUi.style.display = "flex"
         gameUi.style.visibility = "visible"
         setTimeout(() => {
             homeUi.style.display = "none";
