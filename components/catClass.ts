@@ -1,6 +1,5 @@
 import { Companion } from "./companionClass";
 
-
 export class Cat extends Companion {
     sad: number;
     angry: number;

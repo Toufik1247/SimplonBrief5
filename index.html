@@ -28,10 +28,18 @@
     </div>
 
     <div class="game" id="game">
-        <h2 id="companion-name-display"></h2>
+        <h2 id="companionNameDisplay" class="companionNameDisplay"></h2>
 
         <div class="tamagotchi">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+                width="100%" height="100%">
+                <defs>
+                    <pattern id="imagePattern" patternUnits="objectBoundingBox" width="1" height="1">
+                        <image id="screenImg" class="shake" xlink:href="./assets/dog/SVG/normal.svg"
+                            preserveAspectRatio="xMidYMid meet" width="35%" height="27%" />
+                    </pattern>
+                </defs>
+                <rect class="screen" x="32.25" y="36.75" width="35" height="28" fill="url(#imagePattern)" />
                 <circle id="need1Button" cx="36.75" cy="81.25" r="4" stroke="black" fill="transparent"
                     style="cursor: pointer;" />
                 <circle id="need2Button" cx="50.17" cy="86.25" r="4" stroke="black" fill="transparent"
@@ -44,27 +52,29 @@
             <div class="needs">
                 <div class="need">
                     <label for="need1"></label>
-                    <progress id="need1" max="100" value="0"></progress>
+                    <progress id="need1" max="100" value="100"></progress>
                 </div>
                 <div class="need">
                     <label for="need2"></label>
-                    <progress id="need2" max="100" value="0"></progress>
+                    <progress id="need2" max="100" value="100"></progress>
                 </div>
                 <div class="need">
                     <label for="need3"></label>
-                    <progress id="need3" max="100" value="0"></progress>
+                    <progress id="need3" max="100" value="100"></progress>
                 </div>
+
             </div>
         </div>
 
+        <h3 class="help">Saisissez un des besoins dans le terminal pour augmenter sa jauge à 100%</h3>
+
         <div class="terminal">
             <div class="Cur_Input_Line">
-                <span class="Ter_Green">Jason</span>
+                <span class="Ter_Green">Tamagotchi</span>
                 <span class="Ter_Gray">:</span>
-                <spaclass="Ter_Blue">~/Desktop/Website</span>
-                    <span class="Ter_Gray">$</span>
-                    <input type="text" class="Ter_Input">
-                    <div class="Blink"></div>
+                <span class="Ter_Blue">~/</span>
+                <span class="Ter_Gray">$</span>
+                <input type="text" class="terInput">
             </div>
         </div>
     </div>

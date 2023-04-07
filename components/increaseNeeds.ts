@@ -1,7 +1,5 @@
 import { myCompanion, props } from "./initializeUi";
 
-import { Dog } from "./dogClass";
-
 export function increaseNeeds() {
     // Récupération des boutons pour chacun des besoins
     const btnNeed1 = document.getElementById('need1Button') as HTMLElement
@@ -30,35 +28,35 @@ export function increaseNeeds() {
         });
     }
 
-    //Augmentation de la jauge de 10% en cas de click sur le bouton
-    btnNeed1?.addEventListener("click", () => {
-        if (progressElement1.value < 100) {
-            myCompanion[props[1]] *= 1.1;
-            progressElement1.value = myCompanion[props[1]]
-            // console.log(progressElement1.value)
-        }
+    // //Augmentation de la jauge de 10% en cas de click sur le bouton
+    [btnNeed1, btnNeed2, btnNeed3].forEach(item => {
+        item.addEventListener('click', event => {
+            if (event.target == btnNeed1) {
+                if (progressElement1.value < 100) {
+                    myCompanion[props[1]] *= 1.1;
+                    progressElement1.value = myCompanion[props[1]]
+                }
+            } else if (event.target == btnNeed2) {
+                if (progressElement2.value < 100) {
+                    myCompanion[props[2]] *= 1.1;
+                    progressElement2.value = myCompanion[props[2]]
+                }
+            } else if (event.target == btnNeed3) {
+                if (progressElement3.value < 100) {
+                    myCompanion[props[3]] *= 1.1;
+                    progressElement3.value = myCompanion[props[3]]
+                }
+            }
+
+        })
     })
 
-    btnNeed2?.addEventListener("click", () => {
-        if (progressElement2.value < 100) {
-            myCompanion[props[2]] *= 1.1;
-            progressElement2.value = myCompanion[props[2]]
-            // console.log(progressElement2.value)
-        }
-    })
 
-    btnNeed3?.addEventListener("click", () => {
-        if (progressElement3.value < 100) {
-            myCompanion[props[3]] *= 1.1;
-            progressElement3.value = myCompanion[props[3]]
-            // console.log(progressElement3.value)
-        }
-    })
     return {
         // Autres membres de l'objet retourné par increaseNeeds
         preventTextSelection,
         btnNeed1,
         btnNeed2,
         btnNeed3
-      };
+    };
 }

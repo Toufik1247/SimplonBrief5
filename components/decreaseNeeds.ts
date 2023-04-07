@@ -14,15 +14,15 @@ export function decreaseNeeds() {
 
         // Faire baisser les jauges conformément aux exigences du cahier des charges
 
-        if (propValue >= 50) {
+        if (propValue > 50) {
             // Baisse de 10% si la jauge à plus de 50%
-            newNeedValue = propValue * 0.9;
+            newNeedValue = propValue - 10;
         } else if (propValue >= 15) {
             // Baisse de 6% si la jauge à plus de 15%
-            newNeedValue = propValue * 0.94;
+            newNeedValue = propValue - 6;
         } else {
             // Baisse de 2% si la jauge à moins de 15%
-            newNeedValue = propValue * 0.96;
+            newNeedValue = propValue - 2 ;
         }
         // Actualiser la valeur de la propriété ainsi que la jauge
         myCompanion[propName] = newNeedValue;
